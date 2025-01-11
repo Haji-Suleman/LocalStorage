@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f7f9fc;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .profile-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .profile-info {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .profile-info h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .profile-info p {
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #555;
+        }
+        #editProfile {
+            height: 50px;
+            width: 140px;
+            border-radius: 7px;
+            border: none;
+            background-color: #0056b3;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #editProfile:hover {
+            background-color: #003d7a;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 22px;
+            }
+            .profile-info h3 {
+                font-size: 18px;
+            }
+            .profile-info p {
+                font-size: 14px;
+            }
+            #editProfile {
+                width: 120px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <div class="profile-container">
+        <div class="profile-info">
+            <h3>Haji suleman</h3>
+            <p>Email: mirhajisulemanjamali@example.com</p>
+            <p>Phone: +923079852568</p>
+            <p>Address: 123 Karachi , Ziauddin , USA</p>
+        </div>
+        <button id="editProfile">Goto Main</button>
+    </div>
+    <script>
+        document.getElementById("editProfile").addEventListener("click", () => {
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>

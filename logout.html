@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Page</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f0f0;
+            color: #333;
+            animation: fadeIn 1s ease-in-out;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2rem;
+            color: #2323d0;
+        }
+        h3 {
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 30px;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #666;
+        }
+        #wayToLogin {
+            height: 60px;
+            width: 150px;
+            border-radius: 7px;
+            border: none;
+            background-color: #2323d0;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #wayToLogin:hover {
+            background-color: #1a1a91;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @media (max-width: 600px) {
+            #wayToLogin {
+                width: 100px;
+                height: 50px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Logout Successful</h1>
+    <h3>You have been logged out successfully.</h3>
+    <p>Thank you for using our service. If you would like to log back in or return to the home page, click the button below.</p>
+    <button id="wayToLogin" aria-label="Go to login page">Go to Login</button>
+    <script>
+        document.getElementById("wayToLogin").addEventListener("click", () => {
+            window.location.href = "login.html";
+        });
+    </script>
+</body>
+</html>

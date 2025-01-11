@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+            background-color: black;
+        }
+        .container {
+            width: 400px;
+            height: 200px;
+            box-shadow: 0 4px 10px rgba(255,255,255,.5);
+        }
+        form{
+            padding: 10px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input{
+            display: block;
+            width: 200px;
+            height: 30px;
+            background-color:transparent;
+        }
+        form{
+            background-color: white;
+        }
+        input::placeholder{
+            color: rgba(0, 0, 0, 0.589);
+        }
+        input[type="text"]{
+            outline: none;
+            border-bottom: 2px solid black;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+        #name:hover{
+            border: 2px solid dodgerblue;
+            border-bottom: 2px solid black;
+        }
+        #submit:focus-within{
+            border-bottom: 3px solid black;
+            border-right: 3px solid black;
+            border-color: dodgerblue;
+            cursor: pointer;
+        }
+
+        #submit:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form  id="form">
+            <input type="text" id="name" placeholder="Input the Name">
+            <p id = "alert"></p>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+    <script>
+        let name = document.getElementById("name");
+        let submit = document.getElementById("submit");
+        let reg = /^[a-zA-Z ]+$/g;
+        submit.addEventListener("click", () =>{
+            event.preventDefault();
+            if(localStorage){
+                if(confirm("first accout of your will be automatically removed")){
+                    localStorage.clear();
+                }
+                else{
+                    window.location.href = "http://127.0.0.1:3000/index.html";
+                }
+            }
+            if(reg.test(name.value) && name.value !== ""){
+                window.location.href = "http://127.0.0.1:3000/index.html";
+                document.getElementById("alert").innerText ="";
+                document.getElementById("name").style.borderColor = "green";
+                localStorage.setItem("username",name.value);
+                name.value = "";
+            }
+            else{
+                document.getElementById("alert").style.color = "red";
+                document.getElementById("name").style.borderColor = "red";
+                document.getElementById("alert").innerText ="You can add only letters and ' '";         
+                localStorage.clear();       
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .main-content {
+            text-align: center;
+            padding: 50px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Our Home Page</h1>
+    </div>
+
+    <div class="main-content">
+        <h2>Welcome to our website</h2>
+        <p>We are excited to have you here!</p>
+        <button class="button" onclick="navigateToLogin()">Go to Main</button>
+    </div>
+    <script>
+        function navigateToLogin() {
+            // This will navigate to the login page when the button is clicked
+            window.location.href = "index.html"; // Change the file path as necessary
+        }
+    </script>
+</body>
+</html>
